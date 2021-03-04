@@ -58,7 +58,7 @@
         for (let i = 0; i < heart.length; i++) {
             const image = heart[i].firstElementChild;
           console.log(image.src);
-            if (image.src === "file:///Users/manuelbecerra/Downloads/oop_game-v2/oo_game-v2/images/liveHeart.png" || image.src === "file:///Users/manuelbecerra/Downloads/oo_game-v2-master/images/liveHeart.png" || image.src === "http://127.0.0.1:5500/oo_game-v2/images/liveHeart.png") {
+            if (image.getAttribute('src') === "images/liveHeart.png" ) {
                 image.src = "images/lostHeart.png";
                 this.missed += 1;
                 break;
