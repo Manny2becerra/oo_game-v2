@@ -57,8 +57,8 @@
 
         for (let i = 0; i < heart.length; i++) {
             const image = heart[i].firstElementChild;
-            //console.log(image.src);
-            if (image.src === "http://127.0.0.1:5500/images/liveHeart.png") {
+          console.log(image.src);
+            if (image.src === "http://127.0.0.1:5500/oo_game-v2/images/liveHeart.png") {
                 image.src = "images/lostHeart.png";
                 this.missed += 1;
                 break;
