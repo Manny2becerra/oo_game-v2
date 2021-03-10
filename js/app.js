@@ -4,6 +4,20 @@
 
 let game;
 const startGameButton = document.getElementById("btn__reset");
+const overlay = document.getElementById('overlay');
+const youlost = document.createElement('h3');
+const youWon = document.createElement('h3');
+youWon.className = 'Win';
+youlost.className = 'lose';
+youWon.style.background = '#3a3f58';
+youlost.style.background = '#3a3f58';
+overlay.appendChild(youlost);
+overlay.appendChild(youWon);
+youlost.style.display = "none";
+youWon.style.display = "none";
+youlost.textContent = "Sorry you lost. Play Again!"
+youWon.textContent = "You won! Play Again!"
+
 
 startGameButton.addEventListener('click', () => {
     game = new Game();

@@ -32,6 +32,9 @@
                 }
                 if (this.checkForWin()) {
                     this.gameOver();
+                    const overlay = document.getElementById('overlay');
+                    const youWon = overlay.querySelector('.Win');
+                    youWon.style.display = 'block';
                 }
             } 
             
@@ -45,6 +48,9 @@
                     }
                 }
                 this.removeLife();
+                const overlay = document.getElementById('overlay');
+                const youlost = overlay.querySelector('.lose');
+                youlost.style.display = 'block';
             }
         }
 
@@ -67,6 +73,7 @@
         //console.log(this.missed);
         
         if (this.missed === 5) {
+
            this.gameOver(); 
            //console.log(true);
         }
@@ -104,6 +111,13 @@
         const startScreen = document.getElementById('overlay');
         startScreen.removeAttribute('style');
        
+        //hides previous game over lost or win elements
+        const overlay = document.getElementById('overlay');
+        const youlost = overlay.querySelector('.lose');
+        youlost.style.display = 'none';
+        const youWon = overlay.querySelector('.Win');
+        youWon.style.display = 'none';
+
         // resets all key elements
         const keyDiv = document.getElementById('qwerty');
         const keys = keyDiv.querySelectorAll('button');
@@ -129,6 +143,5 @@
         for (let i = 0; i < phrase.length; i++) {
             phrase[i].remove();
         }
-
     }
  }
