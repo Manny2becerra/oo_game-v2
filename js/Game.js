@@ -33,6 +33,7 @@
                 if (this.checkForWin()) {
                     this.gameOver();
                     const overlay = document.getElementById('overlay');
+                    overlay.className = 'win';
                     const youWon = overlay.querySelector('.Win');
                     youWon.style.display = 'block';
                 }
@@ -44,11 +45,13 @@
                 const keyboardElements = document.getElementsByClassName('key');
                 for (let i = 0; i < keyboardElements.length; i++) {
                     if (keyboardElements[i].textContent === letter)  {
+                        keyboardElements[i].disabled = 'true';
                         keyboardElements[i].className = 'wrong';
                     }
                 }
                 this.removeLife();
                 const overlay = document.getElementById('overlay');
+                overlay.className = 'lose';
                 const youlost = overlay.querySelector('.lose');
                 youlost.style.display = 'block';
             }

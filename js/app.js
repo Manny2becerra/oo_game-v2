@@ -17,6 +17,8 @@ youlost.style.display = "none";
 youWon.style.display = "none";
 youlost.textContent = "Sorry you lost. Play Again!"
 youWon.textContent = "You won! Play Again!"
+youWon.style.backgroundColor = "var(--color-win)";
+youlost.style.backgroundColor = "#f5785f";
 
 
 startGameButton.addEventListener('click', () => {
